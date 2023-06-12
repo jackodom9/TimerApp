@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TimerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Aof-ZI-mg6">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wed, 28 Dec 2022 14:59:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fz-VE-1Le" userLabel="CurrentDateTime">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="126"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPw-64-Mbx">
+                                        <rect key="frame" x="0.0" y="125.99999999999997" width="430" height="419.33333333333326"/>
+                                        <connections>
+                                            <action selector="selectDate:" destination="BYZ-38-t0r" eventType="valueChanged" id="9RQ-3D-Svh"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nr-qD-GWl" userLabel="StartStopTimer">
+                                        <rect key="frame" x="0.0" y="545.33333333333337" width="430" height="167.66666666666663"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start Timer">
+                                            <backgroundConfiguration key="background"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="snd-38-ySE"/>
+                                            <action selector="stopTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nIS-pe-7Ea"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining: 00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O3-3F-Khr" userLabel="TimeRemaining">
+                                        <rect key="frame" x="0.0" y="713" width="430" height="126"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mPw-64-Mbx" firstAttribute="height" secondItem="Aof-ZI-mg6" secondAttribute="height" multiplier="0.5" id="6SG-hh-d9o"/>
+                                    <constraint firstItem="3O3-3F-Khr" firstAttribute="height" secondItem="Aof-ZI-mg6" secondAttribute="height" multiplier="0.15" id="9x5-h2-btE"/>
+                                    <constraint firstItem="0fz-VE-1Le" firstAttribute="height" secondItem="Aof-ZI-mg6" secondAttribute="height" multiplier="0.15" id="Mni-hJ-Q9w"/>
+                                    <constraint firstItem="1nr-qD-GWl" firstAttribute="height" secondItem="Aof-ZI-mg6" secondAttribute="height" multiplier="0.2" id="gV3-RT-ZhV"/>
+                                </constraints>
+                            </stackView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunnyDay" translatesAutoresizingMaskIntoConstraints="NO" id="BuI-XE-1qv">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starryNight" translatesAutoresizingMaskIntoConstraints="NO" id="1gA-R5-lMv" userLabel="starryNight">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1gA-R5-lMv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Sh-ig-Ij3"/>
+                            <constraint firstItem="1gA-R5-lMv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="5EP-xL-sYN"/>
+                            <constraint firstAttribute="bottom" secondItem="1gA-R5-lMv" secondAttribute="bottom" id="6Ax-Zd-JS1"/>
+                            <constraint firstItem="BuI-XE-1qv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IzD-BZ-Qko"/>
+                            <constraint firstItem="Aof-ZI-mg6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MU1-ct-lQh"/>
+                            <constraint firstItem="1gA-R5-lMv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ssn-5h-jFr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Aof-ZI-mg6" secondAttribute="bottom" id="WK4-nX-OuM"/>
+                            <constraint firstItem="BuI-XE-1qv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wr8-AQ-fyl"/>
+                            <constraint firstItem="BuI-XE-1qv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Y7S-Mi-XNG"/>
+                            <constraint firstItem="Aof-ZI-mg6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZDs-4P-ezg"/>
+                            <constraint firstItem="BuI-XE-1qv" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="dhh-lO-Azp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aof-ZI-mg6" secondAttribute="trailing" id="q3F-Mu-dCS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="displayTime" destination="0fz-VE-1Le" id="PMe-KE-sVF"/>
+                        <outlet property="displayTimeRemaining" destination="3O3-3F-Khr" id="k5B-CU-JGI"/>
+                        <outlet property="starryNight" destination="1gA-R5-lMv" id="oVj-c9-rpX"/>
+                        <outlet property="startStopButton" destination="1nr-qD-GWl" id="iDT-4x-FGb"/>
+                        <outlet property="sunnyDay" destination="BuI-XE-1qv" id="jUs-cT-grk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="starryNight" width="360" height="640"/>
+        <image name="sunnyDay" width="56" height="99.666664123535156"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
